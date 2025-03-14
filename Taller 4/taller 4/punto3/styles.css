@@ -1,0 +1,221 @@
+/* Basic Reset */
+* {
+  margin: 0;             /* Elimina los márgenes por defecto de todos los elementos */
+  padding: 0;            /* Elimina el relleno por defecto de todos los elementos */
+  box-sizing: border-box;/* Configura el box model para incluir padding y border en el tamaño total */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Define la fuente principal del documento */
+  background-color: #f8f9fa;      /* Color de fondo claro para toda la página */
+  color: #333;                    /* Color de texto principal */
+}
+
+/* ====== Encabezado (barra superior) ====== */
+header {
+  background-color: #2d9cdb; /* Color azul principal para el fondo del header */
+  padding: 40px 80px;        /* Espacio interno (arriba/abajo e izquierda/derecha) */
+  height: 60px;              /* Altura fija del header */
+  display: flex;             /* Uso de flexbox para alinear elementos horizontalmente */
+  align-items: center;       /* Alinea los elementos verticalmente al centro */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos: izquierda y derecha */
+}
+
+/* Sección izquierda del header (logo, menús) */
+.header-left {
+  display: flex;        /* Dispone los elementos en línea (logo y enlaces) */
+  align-items: center;  /* Centra verticalmente los elementos dentro de .header-left */
+  gap: 80px;            /* Espacio entre el logo y el bloque de enlaces */
+}
+
+.header-left .logo {
+  color: #fff;          /* Color de texto blanco para resaltar en el fondo azul */
+  font-size: 1.3rem;    /* Tamaño de fuente para el logo */
+  font-weight: bold;    /* Hace el texto del logo más grueso */
+}
+
+.nav-links a {
+  color: #fff;             /* Color de los enlaces en blanco */
+  text-decoration: none;   /* Elimina el subrayado por defecto de los enlaces */
+  font-size: 0.95rem;      /* Tamaño de fuente ligeramente menor */
+  margin-right: 15px;      /* Espacio entre los enlaces */
+  transition: opacity 0.2s;/* Transición suave de opacidad en el hover */
+}
+
+.nav-links a:hover {
+  opacity: 0.8;            /* Efecto de atenuación cuando se pasa el ratón */
+}
+
+/* Sección derecha del header (botón, etc.) */
+.header-right {
+  display: flex;          /* Dispone elementos (botones, iconos) en línea */
+  align-items: center;    /* Centra verticalmente */
+  gap: 15px;              /* Espacio entre cada elemento */
+}
+
+.btn-find-match {
+  background-color: #1abc9c; /* Color verde turquesa */
+  color: #fff;               /* Texto en blanco para contrastar */
+  border: none;              /* Elimina el borde por defecto del botón */
+  border-radius: 4px;        /* Bordes redondeados */
+  padding: 15px 45px;        /* Relleno interno del botón (vertical y horizontal) */
+  font-size: 0.9rem;         /* Tamaño de fuente del botón */
+  cursor: pointer;           /* Cambia el cursor a “puntero” */
+  transition: background-color 0.2s; /* Transición para el cambio de color en hover */
+}
+
+.btn-find-match:hover {
+  background-color: #17a085; /* Oscurece ligeramente el color en hover */
+}
+
+/* ====== Contenido principal ====== */
+main {
+  max-width: 1200px;  /* Limita el ancho máximo del contenido principal */
+  margin: 20px auto;  /* Centra el contenedor en la página y añade margen superior/inferior */
+  padding: 0 20px;    /* Espacio interno a los lados */
+}
+
+/* ====== Sección de "Matches" ====== */
+.section-title {
+  font-size: 1.2rem;     /* Tamaño de fuente para el título de la sección */
+  font-weight: bold;     /* Negrita para destacar el título */
+  margin: 20px 0;        /* Margen vertical alrededor del título */
+  color: #2d9cdb;        /* Color azul para el texto del título */
+}
+
+.matches-container {
+  display: flex;         /* Distribuye las tarjetas en línea */
+  flex-wrap: wrap;       /* Permite que las tarjetas pasen a la siguiente línea si no caben */
+  gap: 35px;             /* Espacio entre tarjetas */
+}
+
+.match-card {
+  background-color: #fff;           /* Fondo blanco de la tarjeta */
+  border: 1px solid #e5e5e5;        /* Borde gris claro */
+  border-radius: 6px;               /* Bordes redondeados */
+  width: 220px;                     /* Ancho fijo de la tarjeta */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para darle relieve */
+  display: flex;                    /* Para organizar su contenido interno */
+  flex-direction: column;           /* Apilar contenido en columna (header, body, footer) */
+  justify-content: end;            /* Alinea el contenido al final del contenedor si hay espacio */
+}
+
+.match-card-header {
+  display: flex;                    /* Permite centrar el texto horizontalmente */
+  justify-content: center;          /* Centra horizontalmente el contenido del header */
+  background-color: #2d9cdb;        /* Color de fondo azul */
+  border-radius: 6px 6px 0 0;       /* Borde redondeado solo en la parte superior */
+  padding: 10px;                    /* Espacio interno del header */
+  font-weight: bold;                /* Texto en negrita */
+  color: white;                     /* Texto en color blanco */
+  font-size: 0.95rem;               /* Tamaño de fuente del encabezado */
+}
+
+.match-card-body {
+  padding: 22px;                    /* Espacio interno del cuerpo de la tarjeta */
+  display: flex;                    /* Para organizar elementos en columna */
+  flex-direction: column;
+  gap: 8px;                         /* Espacio entre los elementos del cuerpo */
+}
+
+.players {
+  display: flex;                    /* Organiza los jugadores en línea */
+  flex-wrap: wrap;                  /* Permite que se distribuyan en varias líneas */
+  text-align: center;               /* Centra el texto de los elementos internos */
+  justify-content: center;          /* Centra horizontalmente los elementos */
+  gap: 5px;                         /* Espacio entre cada “player-badge” */
+}
+
+.skill {
+  display: flex;                    /* Centra el texto de la habilidad */
+  justify-content: center;
+  font-size: 1rem;                  /* Tamaño de fuente para la etiqueta de habilidad */
+  color: #e12020;                   /* Color rojo para destacar */
+}
+
+.player-badge {
+  background-color: #2d9cdb;        /* Fondo azul para el círculo */
+  border-radius: 50%;               /* Forma circular */
+  width: 42px;
+  height: 42px;
+  display: flex;                    /* Centra el texto internamente */
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;               /* Tamaño de fuente pequeño */
+  color: white;                     /* Texto en blanco */
+  cursor: default;                  /* Indica que no es interactivo */
+}
+
+.match-card-footer {
+  padding: 10px;                    /* Espacio interno en la parte inferior de la tarjeta */
+  border-top: 1px solid #e5e5e5;    /* Borde superior para separar el footer del cuerpo */
+  display: flex;
+  justify-content: center;          /* Centra el botón de pago */
+}
+
+.pay-button {
+  background-color: #2d9cdb;        /* Color de fondo del botón de pago */
+  color: #fff;                      /* Texto blanco */
+  border: none;                     /* Sin borde */
+  border-radius: 4px;               /* Bordes ligeramente redondeados */
+  padding: 10px 25px;               /* Relleno interno del botón */
+  font-size: 0.85rem;               /* Tamaño de fuente del botón */
+  cursor: pointer;                  /* Muestra el cursor de “puntero” */
+  transition: background-color 0.2s;/* Transición para el hover */
+}
+
+.pay-button:hover {
+  background-color: #1f6f9d;        /* Oscurece el color en hover */
+}
+
+.tournaments-container {
+  display: flex;                    /* Distribuye las tarjetas de torneos en línea */
+  flex-wrap: wrap;                  /* Permite que pasen a la siguiente línea si no caben */
+  gap: 40px;                        /* Espacio entre las tarjetas */
+}
+
+.tournament-card {
+  background-color: #fff;           /* Fondo blanco de la tarjeta */
+  border: 1px solid #e5e5e5;        /* Borde gris claro */
+  border-radius: 7px;               /* Bordes ligeramente redondeados */
+  width: 340px;                     /* Ancho de la tarjeta */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+  display: flex;                    /* Estructura en columna */
+  flex-direction: column;
+  cursor: pointer;                  /* Muestra un cursor de mano al pasar por la tarjeta */
+}
+
+.tournament-card img {
+  width: 100%;                      /* La imagen ocupa todo el ancho de la tarjeta */
+  height: 140px;                    /* Altura fija para la imagen */
+  object-fit: cover;                /* La imagen se recorta o escala para llenar el contenedor */
+}
+
+.tournament-info {
+  padding: 10px;                    /* Espacio interno del contenedor de información */
+  display: flex;                    /* Alinea elementos en columna */
+  flex-direction: column;
+  gap: 6px;                         /* Espacio entre cada línea de texto */
+}
+
+.tournament-info .title {
+  font-weight: bold;                /* Negrita para resaltar el título */
+  font-size: 0.95rem;               /* Tamaño de fuente */
+  color: #333;                      /* Color de texto oscuro */
+}
+
+.tournament-info .prize {
+  font-size: 0.9rem;                /* Tamaño de fuente ligeramente menor */
+  color: #777;                      /* Color gris para texto secundario */
+}
+
+.navegation-button {
+  text-decoration: none;     
+  color: white;               
+  background-color: black;
+  padding: 12px 20px;        
+  border-radius: 6px;        
+  font-size: 1rem;           
+  transition: background-color 0.3s ease; 
+  font-weight: 500;
+}
