@@ -185,3 +185,13 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.navegation-button {
+    text-decoration: none;     
+    color: white;               
+    background-color: black;
+    padding: 12px 20px;        
+    border-radius: 6px;        
+    font-size: 1rem;           
+    transition: background-color 0.3s ease; 
+    font-weight: 500;
+  }
